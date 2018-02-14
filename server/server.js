@@ -11,6 +11,9 @@ app.use(cors())
 
 app.use( express.static( __dirname + `/../build` ) ) 
 
+app.get('/api/students', ctrl.getAll)
+app.get('/api/student/:page', ctrl.getOne)
+app.get('/api/student/query', ctrl.getOneQuery)
 
 const port = process.env.PORT
 

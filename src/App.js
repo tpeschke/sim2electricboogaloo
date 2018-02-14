@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios'
+import Routes from './routes'
 
 class App extends Component {
+
+
   render() {
+
+
     return (
       <div className="App">
-        hello
+        <Routes />
       </div>
     );
   }
