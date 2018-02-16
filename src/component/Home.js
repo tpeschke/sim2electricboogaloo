@@ -17,6 +17,12 @@ export default class Home extends Component {
         })
     }
 
+    handleChange = (input) => {
+        axios.get(`/api/students?search=${input}`).then(res => {
+            this.setState({ students: res.data })
+        })
+    }
+
     render() {
 
         var {students} = this.state
@@ -31,6 +37,15 @@ export default class Home extends Component {
 
         return (
             <div>
+                <br/>
+                <br/>
+                <br/>
+
+                <input placeholder='search' onChange={e=>this.handleChange(e.target.value)}/>
+                <br/>
+                <br/>
+                <br/>
+                
                 {studentList}
             </div>
         )
